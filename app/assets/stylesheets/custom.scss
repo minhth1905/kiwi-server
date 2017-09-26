@@ -1,0 +1,69 @@
+body, html {
+  background-color: white;
+  height: 100%;
+}
+.login-body {
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 50px 60px 30px 60px;
+  box-shadow: 1px 1px 1px grey;
+}
+.login-link-item {
+  text-align: center;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+/* Flash */
+.flash-container {
+  z-index: 200;
+  top: 50px;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+/* Info page */
+.avatar-info {
+  background-color: #666;
+}
+.user-name-info {
+  color:white;
+  font-size: 22px;
+}
+#google-map {
+  width: 100%;
+  height: 300px;
+  z-index: 10;
+}
+/*Term */
+.accept-term {
+  font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/*Dashboard*/
+.dashboard-box {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 5px 0 5px 0;
+  box-shadow: 1px 1px 1px 1px grey;
+}
+.text-underline-none:hover {
+  text-decoration: none!important;
+}
+.text-hover-underline:hover {
+  text-decoration: underline;
+}
+.chosen-container > a > div > b {
+  margin-top: 5px;
+}
+.pop-up-ads {
+  position: fixed;
+  right: 50px;
+  bottom: 0;
+  -webkit-box-shadow: 3px 3px 16px 9px rgba(0,0,0,0.16);
+     -moz-box-shadow: 3px 3px 16px 9px rgba(0,0,0,0.16);
+          box-shadow: 3px 3px 16px 9px rgba(0,0,0,0.16);
+}

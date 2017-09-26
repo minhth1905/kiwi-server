@@ -1,0 +1,92 @@
+<div class="box-container box-center" style="padding-top: 40px">
+  <div class="box-md-30 box-sm-80 box-xs-100">
+    <div class="text-center">
+    <div ng-include="'/templates/users/layouts/logo.html'"></div>
+      <h1 class="title">Đăng ký</h1>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body panel-body-custom">
+        <form ng-submit="signUpForm.$valid && signUp()" name="signUpForm" novalidate>
+
+          <div class="box-container box-space-between">
+            <div class="form-group box-xs-47">
+              <label class="required">Họ</label>
+              <input ng-model="last_name" type="text" class="form-control"
+                required autofocus>
+              <div ng-messages="signUpForm.username.$error"
+                   ng-show="signUpForm.$submitted">
+                <div ng-message="required">{{common_text.validate.require}}</div>
+              </div>
+            </div>
+
+            <div class="form-group box-xs-47">
+              <label class="required">Tên</label>
+              <input ng-model="first_name" type="text" class="form-control"
+                required autofocus>
+              <div ng-messages="signUpForm.username.$error"
+                   ng-show="signUpForm.$submitted">
+                <div ng-message="required">{{common_text.validate.require}}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="form-group">
+              <label class="required">Tên đăng nhập</label>
+              <input ng-model="username" name="username" type="text" class="form-control" required autofocus>
+              <div ng-messages="signUpForm.username.$error"
+                   ng-show="signUpForm.$submitted">
+                <div ng-message="required">{{common_text.validate.require}}</div>
+              </div>
+          </div> -->
+
+          <div class="form-group">
+              <label class="required">Email</label>
+              <input ng-model="email" name="email" type="email"
+                     ng-pattern="/^\s*[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}\s*$/"
+                     class="form-control" required autofocus>
+              <div ng-messages="signUpForm.email.$error"
+                   ng-show="signUpForm.$submitted">
+                <div ng-message="required">{{common_text.validate.require}}</div>
+                <div ng-message="pattern">{{common_text.validate.email}}</div>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="required">Mật khẩu</label>
+              <input ng-model="password" name="password" type="password" class="form-control" required minlength="8" >
+              <div ng-messages="signUpForm.password.$error"
+                   ng-show="signUpForm.$submitted">
+                <div ng-message="required">{{common_text.validate.require}}</div>
+                <div ng-message="minlength">{{common_text.validate.password}}</div>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="required">Xác nhận mật khẩu:</label>
+            <input ng-model="passwordConfirm" name="passwordConfirm" type="password"
+                     equal-to="password" class="form-control" minlength="8" required>
+            <div ng-messages="signUpForm.passwordConfirm.$error"
+                 ng-show="signUpForm.$submitted" class="text-error">
+              <div ng-message="required">{{common_text.validate.require}}</div>
+              <div ng-message="minlength">{{common_text.validate.password}}</div>
+              <div ng-message="equalTo">{{common_text.validate.password_confirm}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" value="Đăng ký" class="btn btn-success btn-block">
+          </div>
+          <hr>
+          <div class="login-link">
+            <div class="box-container box-center">
+              <div class="login-link-item">
+                <span>Bạn đã có tài khoản?</span>
+                <a href="/signin">Đăng nhập</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

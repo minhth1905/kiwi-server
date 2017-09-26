@@ -1,0 +1,12 @@
+/*body {
+  font-size: 13px;
+}*/
+
+div[ng-message], div.error {
+  color: red;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+}

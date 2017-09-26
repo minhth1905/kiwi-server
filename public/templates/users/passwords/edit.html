@@ -1,0 +1,46 @@
+<div class="box-container box-center" style="padding-top: 40px">
+  <div class="box-md-30 box-sm-80 box-xs-100">
+    <div class="text-center">
+      <div ng-include="'/templates/users/layouts/logo.html'"></div>
+      <h1 class="title">Khôi phục mật khẩu</h1>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body panel-body-custom">
+        <form ng-submit="editPasswordForm.$valid && editPassword()" name="editPasswordForm" novalidate>
+          <div class="form-group">
+            <label class="required">Mật khẩu mới</label>
+            <input ng-model="password" name="password" type="password"
+                   class="form-control input-sm" minlength="8" required>
+            <div ng-messages="editPasswordForm.password.$error"
+                 ng-show="editPasswordForm.$submitted" class="text-error">
+              <div ng-message="required">{{common_text.validate.require}}</div>
+              <div ng-message="minlength">{{common_text.validate.password}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="required">Xác nhận mật khẩu mới</label>
+            <input ng-model="newPasswordConfirm" name="newPasswordConfirm" type="password"
+                   equal-to="password" class="form-control input-sm" minlength="8" required>
+            <div ng-messages="editPasswordForm.newPasswordConfirm.$error"
+                 ng-show="editPasswordForm.$submitted" class="text-error">
+              <div ng-message="required">{{common_text.validate.require}}</div>
+              <div ng-message="minlength">{{common_text.validate.password}}</div>
+              <div ng-message="equalTo">{{common_text.validate.password_confirm}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Gửi yêu cầu" class="btn btn-success btn-block">
+          </div>
+          <hr>
+          <div class="login-link">
+            <div class="box-container box-center">
+              <div class="login-link-item">
+                <a href="/signin">Đăng nhập</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

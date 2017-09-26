@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsExample</title>
+  <script type="text/javascript">
+    var currentDate = <%= Date.today.day%>;
+    var currentMonth = <%= Date.today.month%>;
+    var currentYear = <%= Date.today.year%>;
+  </script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <base href="/">
+</head>
+<body>
+  <div ng-app="AccountApp">
+    <div ui-view></div>
+  </div>
+</body>
+</html>

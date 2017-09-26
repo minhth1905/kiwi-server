@@ -1,0 +1,55 @@
+<div class="box-container box-center" style="padding-top: 40px">
+  <div class="box-md-30 box-sm-80 box-xs-100">
+    <div class="text-center">
+    <div ng-include="'/templates/users/layouts/logo.html'"></div>
+      <h1 class="title">Đăng nhập</h1>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body panel-body-custom">
+        <form ng-submit="signInForm.$valid && signIn()" name="signInForm" novalidate>
+          <div class="form-group">
+            <label class="required">Địa chỉ email</label>
+            <input ng-model="email" name="email"
+                   ng-pattern="/^\s*[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}\s*$/"
+                   type="text" class="form-control" required autofocus>
+            <div ng-messages="signInForm.email.$error"
+                 ng-show="signInForm.$submitted">
+              <div ng-message="required">{{common_text.validate.require}}</div>
+              <div ng-message="pattern">{{common_text.validate.email}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="required">Mật khẩu</label>
+            <input ng-model="password" name="password" type="password" class="form-control" required>
+            <div ng-messages="signInForm.password.$error"
+                 ng-show="signInForm.$submitted">
+              <div ng-message="required">{{common_text.validate.require}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" value="Đăng nhập" class="btn btn-success btn-block">
+          </div>
+          <hr>
+          <div class="login-link">
+            <div class="box-container box-center">
+              <div class="login-link-item">
+                <a href="/passwords/new">Quên mật khẩu?</a>
+                <span> | </span>
+                <a href="/user/confirmation">Gửi lại mã xác nhận</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body panel-body-custom">
+        <div class="text-center">
+          <span>Bạn chưa có tài khoản? <a href="/signup">Đăng ký</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
