@@ -15,7 +15,7 @@ class Api::V1::Users::RegistrationsController < ApplicationController
     end
     user = User.new(user_params)
     if user.save
-      render json: {code: 1, message: t("devise.registrations.signed_up_but_unconfirmed")},
+      render json: {code: 1, message: "Đăng ký thành công"},
         status: 200
     else
       render json: {:code => 2, :message => user.errors.full_messages[0]}
@@ -24,6 +24,6 @@ class Api::V1::Users::RegistrationsController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit :first_name, :last_name, :email, :password
+    params.permit :first_name, :last_name, :email, :password
   end
 end
