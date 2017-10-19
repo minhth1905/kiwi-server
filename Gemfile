@@ -11,6 +11,7 @@ gem "font-awesome-rails"
 gem "mysql2", "~> 0.3.20"
 gem "devise", "~> 3.5.6"
 gem "rails-i18n"
+gem 'rack-cors', '~> 0.4.0'
 gem "recaptcha", require: "recaptcha/rails"
 
 gem "jquery-rails"
