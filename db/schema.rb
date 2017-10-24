@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021015957) do
+ActiveRecord::Schema.define(version: 20171024092716) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20171021015957) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.integer  "typee",        limit: 4
+    t.string   "video",        limit: 255
   end
 
   add_index "contents", ["portfolio_id"], name: "index_contents_on_portfolio_id", using: :btree
@@ -52,6 +53,9 @@ ActiveRecord::Schema.define(version: 20171021015957) do
     t.integer  "category_id", limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "view",        limit: 4
+    t.integer  "like",        limit: 4
+    t.string   "video",       limit: 255
   end
 
   add_index "portfolios", ["category_id"], name: "index_portfolios_on_category_id", using: :btree

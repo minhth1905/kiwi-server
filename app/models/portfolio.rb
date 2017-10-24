@@ -4,4 +4,6 @@ class Portfolio < ActiveRecord::Base
   has_many :contents
   has_many :rates
   has_many :comments
+
+  mount_uploader :image, ImagesUploader
 end
