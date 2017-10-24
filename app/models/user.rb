@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   def active?
     status == "active"
   end
+
+  def full_name
+    return "#{self.last_name} #{self.first_name}"
+  end
 end

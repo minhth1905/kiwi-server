@@ -1,0 +1,1 @@
+rake imgur:authorize CLIENT_ID='553b22f7aaf095b' CLIENT_SECRET='f51e840c9dcadae0a60c6256d6ba5867967b0d53'

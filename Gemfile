@@ -13,6 +13,8 @@ gem "devise", "~> 3.5.6"
 gem "rails-i18n"
 gem 'rack-cors', '~> 0.4.0'
 gem "recaptcha", require: "recaptcha/rails"
+gem "imgurapi"
+gem "carrierwave"
 
 gem "jquery-rails"
 gem "turbolinks"

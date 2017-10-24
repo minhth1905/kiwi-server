@@ -5,7 +5,8 @@ class Api::V1::PortfoliosController < ApplicationController
   respond_to :json
 
   def index
-
+    @portfolios = Portfolio.paginate(:page => params[:page],
+      :per_page => Settings.per_page)
   end
 
 end

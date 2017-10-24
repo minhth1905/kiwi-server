@@ -10,6 +10,8 @@ Rails.application.routes.draw do
         resources :registrations
         resources :confirmations
       end
+      resources :categories
+      resources :portfolios
     end
   end
   namespace :admin do
