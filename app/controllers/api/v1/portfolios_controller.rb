@@ -31,11 +31,11 @@ class Api::V1::PortfoliosController < ApplicationController
 
       array.each do |i|
         if i[:type] == "video"
-          Content.create(link: i[:url], content: i[:content],
+          Content.create(link: i[:url],
             portfolio_id: portfolio.id,
             typee: 1)
         else
-          Content.create(link: i[:url], content: i[:content],
+          Content.create(link: i[:url],
             portfolio_id: portfolio.id,
             typee: 0)
         end
