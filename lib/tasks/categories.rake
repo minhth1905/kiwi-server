@@ -5,7 +5,7 @@ namespace :categories do
     name.each do |i|
       puts i
       category = Category.new(name: i, description: "Tập hợp ảnh",
-        image: "category_1.jpg")
+        image: "/images/category_1.jpg")
       category.save(validate: false)
       category.update_columns(image: "category_1.jpg")
     end

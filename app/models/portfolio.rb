@@ -5,5 +5,5 @@ class Portfolio < ActiveRecord::Base
   has_many :rates
   has_many :comments
 
-  mount_uploader :image, ImagesUploader
+  # mount_uploader :image, ImagesUploader
 end

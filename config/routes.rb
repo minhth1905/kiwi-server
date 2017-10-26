@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       end
       resources :categories
       resources :portfolios
+      resources :image_uploaders, only: :create
     end
   end
   namespace :admin do

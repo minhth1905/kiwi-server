@@ -34,4 +34,19 @@ class ApplicationController < ActionController::Base
     #   end
     end
   end
+
+  def save_file_with_token dir, file
+    begin
+      FileUtils.mkdir_p(dir) unless File.directory?(dir)
+      extn = File.extname file.original_filename
+      name = File.basename(file.original_filename, extn).gsub(/[^A-z0-9]/, "_")
+      full_name = name + "_" + SecureRandom.hex(10) + extn
+      full_name = full_name.last(100) if full_name.length > 100
+      path = File.join(dir, full_name)
+      File.open(path, "wb") { |f| f.write file.read }
+      return full_name
+    rescue
+      return nil
+    end
+  end
 end
