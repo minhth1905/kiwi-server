@@ -2,7 +2,7 @@ namespace :portfolios do
   desc "Task description"
   task init: :environment do
     users = User.all
-    image = "portfico.png"
+    image = "/images/portfico.png"
     categories = Category.all
     users.each do |user|
       categories.each do |category|
