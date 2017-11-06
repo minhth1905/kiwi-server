@@ -5,12 +5,12 @@ json.data @portfolios do |portfolio|
   json.name portfolio.name
   json.image portfolio.image
   json.owner do
-    json.full_name portfolio.user.full_name
-    json.id portfolio.user.id
+    json.full_name portfolio.user.full_name rescue nil
+    json.id portfolio.user.id rescue nil
   end
   json.category do
-    json.name portfolio.category.name
-    json.id portfolio.category.id
+    json.name portfolio.category.name rescue nil
+    json.id portfolio.category.id rescue nil
   end
   json.like portfolio.like
   json.view portfolio.view
