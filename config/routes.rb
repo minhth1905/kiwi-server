@@ -5,11 +5,15 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       post "sign_in", :to => 'sessions#create'
+      get "/portfolio/:id/rates", :to => "portfolios#rate"
+      get "/portfolio/:id/comments", :to => "portfolios#comment"
       namespace :users do
         resources :passwords
         resources :registrations
         resources :confirmations
       end
+      resources :rates, only: :create
+      resources :comments, only: :create
       resources :categories
       resources :portfolios
       resources :image_uploaders, only: :create
