@@ -46,4 +46,14 @@ class Api::V1::PortfoliosController < ApplicationController
     end
   end
 
+  def rate
+    portfolio = Portfolio.find_by(id:params[:id])
+    @rates = portfolio.rates.order(id: :desc)
+  end
+
+  def comment
+    portfolio = Portfolio.find_by(id:params[:id])
+    @comments = portfolio.comments.order(id: :desc)
+  end
+
 end
