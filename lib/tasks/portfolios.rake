@@ -2,11 +2,13 @@ namespace :portfolios do
   desc "Task description"
   task init: :environment do
     users = User.all
-    image = "/images/portfico.png"
+
     categories = Category.all
     users.each do |user|
       categories.each do |category|
         1.upto(20) do |i|
+          index_i = i % 4
+          image = "/images/kiwi_#{index_i}.png"
           puts "portfolios #{i}"
           content_data = Faker::Lorem.paragraph
           portfolico = Portfolio.create(description: content_data, content: content_data,
